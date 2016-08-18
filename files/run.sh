@@ -22,3 +22,7 @@ for assets in $(find . | grep .adocassets$); do
 	mkdir -p /target/$(dirname $assets)
 	cp -r $(dirname $assets) /target/$(dirname $(dirname $assets))
 done
+
+if [ -e .postasciidoctor.sh ]; then
+	sh .postasciidoctor.sh
+fi
